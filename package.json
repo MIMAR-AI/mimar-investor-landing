@@ -1,0 +1,14 @@
+{
+  "name": "mimar-investor-landing",
+  "private": true,
+  "version": "1.0.0",
+  "description": "Public investor overview for MIMAR, a FoundifAI product.",
+  "type": "module",
+  "scripts": {
+    "start": "node server.js",
+    "check": "node --check server.js"
+  },
+  "engines": {
+    "node": ">=20"
+  }
+}
