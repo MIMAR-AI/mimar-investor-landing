@@ -6,7 +6,7 @@ Public investor overview for MIMAR, a FoundifAI product.
 
 Connect the `MIMAR-AI/mimar-investor-landing` repository through the Serivox GitHub App, then configure:
 
-- Install command: `npm ci`
+- Install command: `npm install`
 - Build command: none
 - Start command: `npm start`
 - Health endpoint: `/healthz`
