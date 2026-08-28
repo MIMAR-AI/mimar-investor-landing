@@ -7,9 +7,10 @@ const root = fileURLToPath(new URL('.', import.meta.url));
 const files = new Map([
   ['/', 'index.html'],
   ['/index.html', 'index.html'],
-  ['/styles.css', 'styles.css']
+  ['/styles.css', 'styles.css'],
+  ['/assets/mimar-mark.svg', 'assets/mimar-mark.svg']
 ]);
-const types = { '.html': 'text/html; charset=utf-8', '.css': 'text/css; charset=utf-8' };
+const types = { '.html': 'text/html; charset=utf-8', '.css': 'text/css; charset=utf-8', '.svg': 'image/svg+xml' };
 
 createServer(async (req, res) => {
   const path = new URL(req.url, `http://${req.headers.host}`).pathname;

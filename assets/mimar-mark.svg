@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" role="img" aria-labelledby="title desc">
+  <title id="title">MIMAR mark</title><desc id="desc">MIMAR application mark</desc>
+  <defs><linearGradient id="tile" x1="36" y1="28" x2="218" y2="230" gradientUnits="userSpaceOnUse"><stop stop-color="#303742"/><stop offset="1" stop-color="#20252d"/></linearGradient><filter id="soft-glow" x="-35%" y="-35%" width="170%" height="170%"><feGaussianBlur stdDeviation="3.2" result="blur"/><feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge></filter></defs>
+  <rect x="15" y="15" width="226" height="226" rx="54" fill="url(#tile)" stroke="#495461" stroke-width="2"/>
+  <g fill="none" stroke="#9ee8ef" stroke-width="10.5" stroke-linecap="round" filter="url(#soft-glow)"><ellipse cx="128" cy="128" rx="80" ry="35" transform="rotate(28 128 128)"/><ellipse cx="128" cy="128" rx="80" ry="35" transform="rotate(88 128 128)"/><ellipse cx="128" cy="128" rx="80" ry="35" transform="rotate(148 128 128)"/></g>
+  <g fill="#9ee8ef" filter="url(#soft-glow)"><circle cx="128" cy="128" r="10"/><circle cx="69" cy="80" r="7.5"/><circle cx="198" cy="117" r="7.5"/><circle cx="91" cy="199" r="7.5"/></g>
+</svg>
