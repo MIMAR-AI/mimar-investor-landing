@@ -50,8 +50,8 @@ function currency1(range) { range.format.numberFormat = "$#,##0.0;[Red]($#,##0.0
 function pct(range) { range.format.numberFormat = "0.0%"; }
 
 // Assumptions
-setTitle(assumptions, "MIMAR 3-Year Revenue Model — Assumptions", "Blue cells are editable inputs. Confidence is an evidence score, not a probability of achieving the forecast.", "H");
-assumptions.getRange("A4:H4").values = [["Driver", "Y1", "Y2", "Y3", "Unit", "Evidence type", "Score", "Source / rationale"]];
+setTitle(assumptions, "MIMAR 3-Year Revenue Model — Assumptions", "Blue cells are editable inputs. Validation status distinguishes published inputs from assumptions that require paid-cohort evidence.", "H");
+assumptions.getRange("A4:H4").values = [["Driver", "Y1", "Y2", "Y3", "Unit", "Evidence type", "Validation status", "Source / rationale"]];
 styleHeader(assumptions.getRange("A4:H4"));
 const assumptionRows = [
   ["CORE — ending individual paid users",120,600,1800,"users","Management target",25,"MIMAR business plan; no observed cohort data yet"],
@@ -79,9 +79,13 @@ const assumptionRows = [
   ["ENGAGE — enterprise onboarding fee",3000,4000,5000,"$/new account","Management assumption",35,"Integration/security scope"],
   ["ENGAGE — COGS as % revenue",0.20,0.21,0.22,"%","Management target",40,"Excludes pass-through Meta fees from both revenue and margin"],
 ];
+for (const row of assumptionRows) {
+  if (typeof row[6] === "number") {
+    row[6] = row[6] >= 70 ? "Published input" : row[6] >= 50 ? "Market anchored" : row[6] >= 30 ? "Model assumption" : "Validate with cohorts";
+  }
+}
 assumptions.getRange(`A5:H${4 + assumptionRows.length}`).values = assumptionRows;
 assumptions.getRange("B5:D28").format = { fill: inputFill, font: { color: inputFont } };
-assumptions.getRange("G5:G28").format.numberFormat = "0\"/100\"";
 currency(assumptions.getRange("B11:D11"));
 currency(assumptions.getRange("B24:D24"));
 currency(assumptions.getRange("B26:D27"));
@@ -104,6 +108,7 @@ assumptions.getRange("A:H").format.columnWidth = 14;
 assumptions.getRange("A:A").format.columnWidth = 43;
 assumptions.getRange("E:E").format.columnWidth = 18;
 assumptions.getRange("F:F").format.columnWidth = 25;
+assumptions.getRange("G:G").format.columnWidth = 23;
 assumptions.getRange("H:H").format.columnWidth = 58;
 
 // Core monthly model
@@ -183,13 +188,12 @@ const sumBlocks = [
   ["Engage share", "=B18/B20", "=C18/C20", "=D18/D20"],
   ["Gross profit", "=B10*(1-Assumptions!B15)+B18*(1-Assumptions!B28)", "=C10*(1-Assumptions!C15)+C18*(1-Assumptions!C28)", "=D10*(1-Assumptions!D15)+D18*(1-Assumptions!D28)"],
   ["Blended gross margin", "=B26/B20", "=C26/C20", "=D26/D20"],
-  ["Evidence score (not probability)", "=(B5*45+B6*35+B7*25+B8*20+B9*35+B12*45+B13*40+B14*30+B15*20+B16*15+B17*35)/B20", "=(C5*40+C6*32+C7*23+C8*18+C9*35+C12*40+C13*36+C14*28+C15*18+C16*15+C17*35)/C20", "=(D5*35+D6*28+D7*20+D8*16+D9*30+D12*35+D13*30+D14*24+D15*15+D16*12+D17*30)/D20"],
+  ["Model status", "Planning case", "Planning case", "Planning case"],
 ];
 summary.getRange("A5:D28").values = sumBlocks.map(row=>row.map(v=>(typeof v==="string"&&v.startsWith("="))?null:v));
 summary.getRange("B5:D28").formulas = sumBlocks.map(row=>row.slice(1).map(v=>(typeof v==="string"&&v.startsWith("="))?v:null));
 currency(summary.getRange("B5:D22")); currency(summary.getRange("B26:D26"));
 pct(summary.getRange("B23:D25")); pct(summary.getRange("B27:D27"));
-summary.getRange("B28:D28").format.numberFormat="0\"/100\"";
 summary.getRange("A10:D10").format = { fill: "#DFF7FA", font: { bold:true, color:"#12323A" }, borders:{ top:{style:"thin",color:accent}, bottom:{style:"thin",color:accent} } };
 summary.getRange("A18:D18").format = { fill: "#E8EEFF", font: { bold:true, color:"#172554" }, borders:{ top:{style:"thin",color:"#93C5FD"}, bottom:{style:"thin",color:"#93C5FD"} } };
 summary.getRange("A20:D20").format = { fill: bg, font: { bold:true, color:accent, size:12 }, borders:{ top:{style:"medium",color:accent}, bottom:{style:"medium",color:accent} } };
@@ -207,7 +211,7 @@ summary.getRange("G5:I7").formulas = [["=B10","=B18","=B20"],["=C10","=C18","=C2
 currency(summary.getRange("G5:I7"));
 const chart = summary.charts.add("bar", summary.getRange("F4:H7"));
 chart.title = "Revenue mix by product ($)"; chart.hasLegend = true; chart.setPosition("F9","L25"); chart.yAxis = { numberFormatCode: "$0.0,,\"M\"" };
-summary.getRange("F27:L30").merge(); summary.getRange("F27").values = [["Trust note: the score measures evidence quality behind the assumptions. It is not a statistical probability. Until paid cohorts exist, scenario ranges are more decision-useful than a single-point forecast."]];
+summary.getRange("F27:L30").merge(); summary.getRange("F27").values = [["Forecast note: this is a driver-based planning case, not company guidance. Conservative and upside ranges are shown because paid conversion, retention, seat expansion and usage cohorts are still being established."]];
 summary.getRange("F27:L30").format = { fill: "#FFF7ED", font:{ color:"#7C2D12", italic:true }, wrapText:true, verticalAlignment:"center" };
 summary.getRange("A:L").format.columnWidth=15; summary.getRange("A:A").format.columnWidth=32; summary.getRange("F:F").format.columnWidth=12;
 summary.freezePanes.freezeRows(4);
