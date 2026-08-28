@@ -13,6 +13,8 @@
   <title>MIMAR — Investor overview</title>
   <link rel="stylesheet" href="/styles.css" />
   <link rel="stylesheet" href="/brand.css" />
+  <link rel="stylesheet" href="/motion.css" />
+  <script src="/script.js" defer></script>
 </head>
 <body>
   <header class="site-header">
@@ -29,39 +31,39 @@
       <div class="hero-facts"><div><b>01</b><span>FOR 5–50 PERSON TEAMS<small>Product, engineering, and delivery</small></span></div><div><b>02</b><span>START WITH RELEASE WORKFLOWS<small>One recurring workflow at a time</small></span></div><div><b>03</b><span>PRIVATE BETA<small>Recruiting design partners</small></span></div></div>
     </section>
 
-    <section class="section" id="thesis">
+    <section class="section" id="thesis" data-reveal>
       <div class="section-label"><span>01</span><p>THE THESIS</p></div>
       <div class="section-copy"><h2>AI can complete a task.<br /><em>MIMAR manages the work around it.</em></h2><p>Teams already have capable AI agents. The bottleneck is the work between agent turns: preserving context, coordinating tools and people, validating results, and knowing when a person must decide.</p></div>
       <div class="contrast-grid"><article><small>THE CURRENT STATE</small><h3>Work fragments</h3><p>Chats, files, tools, people, and decisions split the story of the work across disconnected places.</p><ol><li>Prompt</li><li>Agent</li><li>Result</li><li>Start again</li></ol></article><article class="accent-card"><small>THE MIMAR STATE</small><h3>Work compounds</h3><p>Context, steps, artifacts, checks, and decisions remain connected and can be reused.</p><ol><li>Outcome</li><li>Workflow</li><li>Evidence</li><li>Reuse</li></ol></article></div>
     </section>
 
-    <section class="section" id="product">
+    <section class="section" id="product" data-reveal>
       <div class="section-label"><span>02</span><p>THE PRODUCT</p></div>
       <div class="section-copy"><h2>One project.<br /><em>Two modes of work.</em></h2><p>Conversation is where work begins. Workflow execution is where it becomes durable, inspectable, and repeatable.</p></div>
       <div class="product-grid"><article><small>01 · WORKSPACE</small><h3>Understand the work</h3><p>Projects, conversations, files, memory, terminal, and remote tools draw on the same context.</p><footer>Explore → decide → prepare</footer></article><article class="accent-card"><small>02 · WORKFLOW EXECUTION</small><h3>Move it forward</h3><p>Persistent steps, agents, artifacts, validations, handoffs, approvals, and a history that can be resumed and reused.</p><footer>Execute → validate → approve → reuse</footer></article></div>
       <div class="workflow"><header><span>PRODUCT RELEASE · WORKFLOW RUN</span><b>IN PROGRESS</b></header><ol><li class="done"><i>✓</i><span><small>01 · DISCOVER</small><strong>Map the release scope</strong></span><em>Artifact saved</em></li><li class="done"><i>✓</i><span><small>02 · BUILD</small><strong>Prepare the implementation</strong></span><em>Evidence saved</em></li><li class="active"><i>03</i><span><small>03 · VALIDATE</small><strong>Run the required checks</strong></span><em>Running</em></li><li><i>04</i><span><small>04 · APPROVE</small><strong>Make the release decision</strong></span><em>Human call</em></li></ol></div>
     </section>
 
-    <section class="section" id="wedge">
+    <section class="section" id="wedge" data-reveal>
       <div class="section-label"><span>03</span><p>WHY MIMAR</p></div>
       <div class="wedge-grid"><div><h2>Start where the cost of lost context is already visible.</h2><p>The wedge is one recurring release workflow for product and engineering teams: a real outcome with several stages, handoffs, validations, and decisions.</p></div><div class="wedge-list"><p><b>CHAT TOOLS</b><span>Help complete a task, but the operating context resets after the result.</span></p><p><b>AGENT TOOLS</b><span>Automate steps, while approvals and accountability remain outside the workflow.</span></p><p><b>MIMAR</b><span>Keeps the workflow, artifacts, evidence, and human decisions connected and reusable.</span></p><p><b>EXPANSION</b><span>Release workflows → product operations → broader delivery execution.</span></p></div></div>
     </section>
 
-    <section class="section" id="model">
+    <section class="section" id="model" data-reveal>
       <div class="section-label"><span>04</span><p>THE BUSINESS MODEL</p></div>
       <div class="section-copy"><h2>Start with a team workflow.<br /><em>Expand with real value.</em></h2><p>The first paid motion is shared execution for teams. Individual access supports discovery; enterprise and API usage expand account value only when the workflow becomes more trusted and critical.</p></div>
       <div class="revenue-grid"><article><small>INDIVIDUALS</small><h3>Plus <em>$10</em></h3><p>Pro <b>$25</b> · Ultimate <b>$100</b> later</p><span>Personal MIMAR access</span></article><article><small>TEAMS</small><h3>Plus <em>$12</em></h3><p>Pro <b>$30</b> / user / month</p><span>Minimum 3 seats · shared execution</span></article><article><small>ENTERPRISE</small><h3>Annual</h3><p>Custom commercial terms</p><span>Security, SSO, SLA, deployment</span></article><article class="accent-card"><small>MIMAR API</small><h3>Wallet</h3><p>Prepaid usage. No API tiers.</p><span>Pay for actual token consumption</span></article></div>
       <div class="api-table"><p>API PRICING · USD PER 1M TOKENS</p><table><thead><tr><th></th><th>≤256k input context</th><th>&gt;256k input context</th></tr></thead><tbody><tr><td>Input</td><td>$1.00</td><td>$1.25</td></tr><tr><td>Output</td><td>$4.00</td><td>$7.00</td></tr><tr><td>Cached input</td><td>$0.10</td><td>$0.20</td></tr></tbody></table><small>API access uses a prepaid balance, separate from MIMAR application subscriptions.</small></div>
     </section>
 
-    <section class="section" id="outlook">
+    <section class="section" id="outlook" data-reveal>
       <div class="section-label"><span>05</span><p>THE OPERATING OUTLOOK</p></div>
       <div class="section-copy"><h2>Build the proof.<br /><em>Then scale the system.</em></h2><p>These are base-case operating projections, not historic results or guidance. MIMAR is currently in Private Beta; the immediate job is to prove adoption and repeatability with design partners.</p></div>
-      <div class="projection-grid"><article><header><small>YEAR 1</small><b>Private beta → paid proof</b></header><strong>$106K</strong><p>projected revenue</p><dl><div><dt>MRR</dt><dd>$13.5K</dd></div><div><dt>Paid users / teams</dt><dd>120 / 25</dd></div></dl></article><article><header><small>YEAR 2</small><b>Repeatable team motion</b></header><strong>$710K</strong><p>projected revenue</p><dl><div><dt>MRR</dt><dd>$43K</dd></div><div><dt>Paid users / teams</dt><dd>600 / 85</dd></div></dl></article><article><header><small>YEAR 3</small><b>Expansion and API usage</b></header><strong>$2.34M</strong><p>projected revenue</p><dl><div><dt>MRR</dt><dd>$150K</dd></div><div><dt>Paid users / teams</dt><dd>1,800 / 230</dd></div></dl></article></div>
+      <div class="projection-grid"><article><header><small>YEAR 1</small><b>Private beta → paid proof</b></header><strong data-count="106" data-prefix="$" data-suffix="K">$106K</strong><p>projected revenue</p><dl><div><dt>MRR</dt><dd>$13.5K</dd></div><div><dt>Paid users / teams</dt><dd>120 / 25</dd></div></dl></article><article><header><small>YEAR 2</small><b>Repeatable team motion</b></header><strong data-count="710" data-prefix="$" data-suffix="K">$710K</strong><p>projected revenue</p><dl><div><dt>MRR</dt><dd>$43K</dd></div><div><dt>Paid users / teams</dt><dd>600 / 85</dd></div></dl></article><article><header><small>YEAR 3</small><b>Expansion and API usage</b></header><strong data-count="2.34" data-decimals="2" data-prefix="$" data-suffix="M">$2.34M</strong><p>projected revenue</p><dl><div><dt>MRR</dt><dd>$150K</dd></div><div><dt>Paid users / teams</dt><dd>1,800 / 230</dd></div></dl></article></div>
       <div class="milestones"><div><b>1</b><p><strong>10 design partners</strong><span>Validate a repeatable workflow wedge.</span></p></div><div><b>2</b><p><strong>5–7 paid conversions</strong><span>Prove willingness to pay and retention.</span></p></div><div><b>3</b><p><strong>Production API wallet</strong><span>Keys, metering, limits, settlement, and billing.</span></p></div></div>
     </section>
 
-    <section class="company"><div><p class="eyebrow"><span></span>BUILT BY FOUNDIFAI</p><h2>MIMAR is a FoundifAI product.</h2><p>FoundifAI builds and owns MIMAR. MIMAR Core is the primary product thesis; MIMAR Engage is a separate future vertical, not a dependency of the Core strategy.</p></div><a class="button primary" href="https://foundifai.com/" target="_blank" rel="noopener noreferrer">Visit FoundifAI <b>↗</b></a></section>
+    <section class="company" data-reveal><div><p class="eyebrow"><span></span>BUILT BY FOUNDIFAI</p><h2>MIMAR is a FoundifAI product.</h2><p>FoundifAI builds and owns MIMAR. MIMAR Core is the primary product thesis; MIMAR Engage is a separate future vertical, not a dependency of the Core strategy.</p></div><a class="button primary" href="https://foundifai.com/" target="_blank" rel="noopener noreferrer">Visit FoundifAI <b>↗</b></a></section>
   </main>
   <footer class="page-footer"><a class="brand" href="#top"><img class="mark" src="/assets/mimar-mark.svg" alt="" /><b>MIMAR</b></a><p>© 2026 FoundifAI. Investor overview. Forecasts are not actual financial results.</p><a href="#top">Back to top ↑</a></footer>
 </body>

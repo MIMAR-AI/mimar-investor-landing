@@ -1,0 +1,26 @@
+@media (prefers-reduced-motion: no-preference) {
+  .hero-grid { animation: grid-drift 24s linear infinite; }
+  .hero::after { animation: orbital-drift 18s ease-in-out infinite alternate; }
+  .hero .eyebrow, .hero h1, .hero-copy, .hero-actions, .hero-facts { animation: hero-enter .7s both; }
+  .hero h1 { animation-delay: .08s; }
+  .hero-copy { animation-delay: .16s; }
+  .hero-actions { animation-delay: .24s; }
+  .hero-facts { animation-delay: .34s; }
+
+  .motion-ready [data-reveal] { opacity: 0; transform: translateY(22px); transition: opacity .65s ease, transform .65s cubic-bezier(.2,.75,.2,1); }
+  .motion-ready [data-reveal].is-visible { opacity: 1; transform: none; }
+  .motion-ready [data-reveal] .contrast-grid > article, .motion-ready [data-reveal] .product-grid > article, .motion-ready [data-reveal] .revenue-grid > article, .motion-ready [data-reveal] .projection-grid > article { opacity: 0; transform: translateY(14px); transition: opacity .45s ease, transform .45s cubic-bezier(.2,.75,.2,1); }
+  .motion-ready [data-reveal].is-visible .contrast-grid > article, .motion-ready [data-reveal].is-visible .product-grid > article, .motion-ready [data-reveal].is-visible .revenue-grid > article, .motion-ready [data-reveal].is-visible .projection-grid > article { opacity: 1; transform: none; }
+  .motion-ready [data-reveal].is-visible .contrast-grid > article:nth-child(2), .motion-ready [data-reveal].is-visible .product-grid > article:nth-child(2), .motion-ready [data-reveal].is-visible .revenue-grid > article:nth-child(2), .motion-ready [data-reveal].is-visible .projection-grid > article:nth-child(2) { transition-delay: .1s; }
+  .motion-ready [data-reveal].is-visible .revenue-grid > article:nth-child(3), .motion-ready [data-reveal].is-visible .projection-grid > article:nth-child(3) { transition-delay: .2s; }
+  .motion-ready [data-reveal].is-visible .revenue-grid > article:nth-child(4) { transition-delay: .3s; }
+
+  .workflow li.active { box-shadow: 0 0 0 0 #9ee8ef38; animation: workflow-pulse 2.8s ease-out infinite; }
+  .workflow li.active i { animation: workflow-step 2.2s ease-in-out infinite; }
+}
+
+@keyframes grid-drift { from { background-position: 0 0,0 0; } to { background-position: 72px 72px,72px 72px; } }
+@keyframes orbital-drift { from { transform: translate3d(0,0,0) scale(1); } to { transform: translate3d(-32px,24px,0) scale(1.04); } }
+@keyframes hero-enter { from { opacity: 0; transform: translateY(13px); } to { opacity: 1; transform: none; } }
+@keyframes workflow-pulse { 0% { box-shadow: 0 0 0 0 #9ee8ef42; } 70%,100% { box-shadow: 0 0 0 10px #9ee8ef00; } }
+@keyframes workflow-step { 0%,100% { transform: scale(1); } 50% { transform: scale(1.13); } }

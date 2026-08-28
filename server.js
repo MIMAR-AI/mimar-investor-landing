@@ -9,9 +9,11 @@ const files = new Map([
   ['/index.html', 'index.html'],
   ['/styles.css', 'styles.css'],
   ['/brand.css', 'brand.css'],
+  ['/motion.css', 'motion.css'],
+  ['/script.js', 'script.js'],
   ['/assets/mimar-mark.svg', 'assets/mimar-mark.svg']
 ]);
-const types = { '.html': 'text/html; charset=utf-8', '.css': 'text/css; charset=utf-8', '.svg': 'image/svg+xml' };
+const types = { '.html': 'text/html; charset=utf-8', '.css': 'text/css; charset=utf-8', '.js': 'text/javascript; charset=utf-8', '.svg': 'image/svg+xml' };
 
 createServer(async (req, res) => {
   const path = new URL(req.url, `http://${req.headers.host}`).pathname;
