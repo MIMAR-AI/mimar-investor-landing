@@ -8,6 +8,7 @@ const files = new Map([
   ['/', 'index.html'],
   ['/index.html', 'index.html'],
   ['/styles.css', 'styles.css'],
+  ['/wedge.css', 'wedge.css'],
   ['/brand.css', 'brand.css'],
   ['/motion.css', 'motion.css'],
   ['/data.css', 'data.css'],

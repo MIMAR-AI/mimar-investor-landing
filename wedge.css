@@ -1,0 +1,11 @@
+.wedge-list .mimar-row {
+  margin: 0 -14px;
+  padding: 19px 14px;
+  background: #17313970;
+  border: 1px solid #9ee8ef4a;
+  border-radius: 9px;
+}
+
+.wedge-list .mimar-row span {
+  color: var(--ink);
+}
