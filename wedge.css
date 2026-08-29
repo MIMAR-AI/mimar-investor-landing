@@ -34,6 +34,17 @@
   line-height: 1.55;
 }
 
+.beta-badge {
+  display: inline-block;
+  margin-top: 10px;
+  padding: 4px 6px;
+  border: 1px solid #9ee8ef4a;
+  border-radius: 5px;
+  color: var(--accent);
+  font-size: 9px;
+  letter-spacing: .06em;
+}
+
 @media (max-width: 760px) {
   .model-note { display: grid; gap: 8px; }
 }
