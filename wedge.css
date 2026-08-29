@@ -9,3 +9,31 @@
 .wedge-list .mimar-row span {
   color: var(--ink);
 }
+
+.model-note {
+  margin-top: 14px;
+  padding: 18px 21px;
+  display: flex;
+  justify-content: space-between;
+  gap: 28px;
+  align-items: center;
+  border: 1px solid #9ee8ef38;
+  border-radius: 11px;
+  background: #12181e;
+}
+
+.model-note strong {
+  color: var(--accent);
+  font-size: 13px;
+}
+
+.model-note span {
+  max-width: 490px;
+  color: var(--muted);
+  font-size: 12px;
+  line-height: 1.55;
+}
+
+@media (max-width: 760px) {
+  .model-note { display: grid; gap: 8px; }
+}
