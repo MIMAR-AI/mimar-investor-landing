@@ -45,6 +45,39 @@
   letter-spacing: .06em;
 }
 
+.monetization-label {
+  margin: 28px 0 10px;
+  color: var(--accent);
+  font: 700 10px/1 var(--mono);
+  letter-spacing: .12em;
+}
+
+.engage-note {
+  margin-top: 14px;
+  padding: 17px 21px;
+  display: flex;
+  justify-content: space-between;
+  gap: 28px;
+  align-items: center;
+  border: 1px solid #8aa7ff42;
+  border-radius: 11px;
+  background: #141820;
+}
+
+.engage-note strong {
+  color: #9fb5ff;
+  font-size: 11px;
+  letter-spacing: .08em;
+}
+
+.engage-note span {
+  max-width: 550px;
+  color: var(--muted);
+  font-size: 12px;
+  line-height: 1.55;
+}
+
 @media (max-width: 760px) {
   .model-note { display: grid; gap: 8px; }
+  .engage-note { display: grid; gap: 8px; }
 }
